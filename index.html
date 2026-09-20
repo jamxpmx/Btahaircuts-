@@ -7,58 +7,72 @@
     <title>BTA Haircuts | Grand Rapids Barber Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --ink:#0b0b0b; --paper:#ffffff; --copper:#ffffff; --clay:#0b0b0b; --muted:#666666; --line:rgba(11,11,11,.18); --display:'Playfair Display',Georgia,serif; --body:'DM Sans',Arial,sans-serif; --mono:'DM Mono',monospace; }
+        :root { --ink:#08090a; --paper:#f4f5f6; --silver:#bfc4ca; --bright:#ffffff; --muted:#737981; --line:rgba(191,196,202,.22); --display:'Michroma',Arial,sans-serif; --body:'Montserrat',Arial,sans-serif; --mono:'Space Mono',monospace; }
         * { box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--body); }
         a { color:inherit; text-decoration:none; }
         .wrap { max-width:1240px; margin:auto; padding:0 34px; }
-        .eyebrow { color:#555555; font:500 11px var(--mono); letter-spacing:.16em; text-transform:uppercase; }
-        .button { display:inline-flex; align-items:center; gap:14px; border:1px solid var(--ink); padding:15px 18px; font:500 11px var(--mono); letter-spacing:.1em; text-transform:uppercase; transition:.2s; }
-        .button:hover { color:var(--paper); background:var(--ink); transform:translateY(-2px); }
-        .button.dark { color:var(--paper); background:var(--ink); }
-        .button.dark:hover { color:var(--ink); background:transparent; }
+        .eyebrow { color:var(--muted); font:500 10px var(--mono); letter-spacing:.22em; text-transform:uppercase; }
+        .button { display:inline-flex; align-items:center; gap:14px; border:1px solid currentColor; padding:15px 18px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; transition:color .25s,background .25s,transform .25s,border-color .25s; }
+        .button:hover { color:var(--ink); background:var(--silver); border-color:var(--silver); transform:translateY(-3px); }
+        .button.dark { color:var(--bright); background:var(--ink); }
+        .button.dark:hover { color:var(--ink); background:var(--silver); }
         header { position:absolute; z-index:2; width:100%; color:var(--paper); }
-        nav { display:flex; align-items:center; justify-content:space-between; padding:25px 0; border-bottom:1px solid rgba(243,238,229,.28); }
-        .logo { font:800 25px var(--display); letter-spacing:-.07em; }
-        .logo span { color:var(--copper); }
-        .nav-links { display:flex; gap:28px; font:500 10px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
-        .nav-links a:hover { color:var(--copper); }
-        .book-link { border-bottom:1px solid var(--copper); padding-bottom:4px; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+        nav { display:flex; align-items:center; justify-content:space-between; padding:25px 0; border-bottom:1px solid rgba(191,196,202,.28); }
+        .logo { display:flex; align-items:center; }
+        .logo img { display:block; width:116px; height:42px; object-fit:contain; filter:grayscale(1) contrast(1.15); }
+        .nav-links { display:flex; gap:28px; font:700 10px var(--mono); letter-spacing:.16em; text-transform:uppercase; }
+        .nav-links a:hover { color:var(--silver); }
+        .book-link { border-bottom:1px solid var(--silver); padding-bottom:4px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
         .hero { min-height:690px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
-        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.96) 8%,rgba(0,0,0,.68) 58%,rgba(0,0,0,.36)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=85') center/cover; filter:grayscale(1); }
+        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,9,10,.98) 8%,rgba(8,9,10,.8) 58%,rgba(8,9,10,.52)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=85') center/cover; filter:grayscale(1) contrast(1.15); }
+        .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.16; background:linear-gradient(115deg,transparent 0 47%,var(--silver) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,var(--silver) 76.1% 76.2%,transparent 76.3%); }
         .hero .wrap { position:relative; z-index:1; min-height:690px; display:flex; align-items:flex-end; padding-bottom:78px; }
-        .hero-copy { max-width:700px; }
-        h1 { margin:18px 0 25px; font:700 clamp(56px,8vw,108px)/.9 var(--display); letter-spacing:-.07em; }
-        h1 em { color:var(--paper); font-style:normal; }
-        .hero-note { display:flex; gap:16px; max-width:380px; color:#d7d0c4; font-size:14px; line-height:1.5; }
-        .hero-note::before { content:''; width:35px; height:1px; margin-top:10px; flex:none; background:var(--paper); }
+        .hero-copy { max-width:760px; animation:rise-in .8s ease-out both; }
+        h1 { margin:24px 0 25px; font:400 clamp(48px,8vw,106px)/.96 var(--display); letter-spacing:.025em; text-transform:uppercase; }
+        h1 em { color:var(--silver); font-style:normal; }
+        .hero-note { display:flex; gap:16px; max-width:470px; color:#d4d8dc; font-size:13px; line-height:1.7; letter-spacing:.04em; }
+        .hero-note::before { content:''; width:35px; height:1px; margin-top:10px; flex:none; background:var(--silver); }
         .actions { display:flex; flex-wrap:wrap; gap:18px; margin-top:34px; }
         .actions .button:first-child { border-color:var(--paper); }
         section { padding:94px 0; }
         .intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:10%; border-bottom:1px solid var(--line); }
-        h2 { margin:14px 0 23px; font:600 clamp(40px,5vw,64px)/.96 var(--display); letter-spacing:-.06em; }
-        .intro-copy { align-self:end; max-width:465px; color:#615b53; font-size:16px; line-height:1.7; }
+        h2 { margin:14px 0 23px; font:400 clamp(32px,5vw,58px)/1.1 var(--display); letter-spacing:.02em; text-transform:uppercase; }
+        .intro-copy { align-self:end; max-width:465px; color:#4f555c; font-size:14px; line-height:1.8; }
         .intro-copy p { margin:0 0 27px; }
         .services-head { display:flex; align-items:end; justify-content:space-between; margin-bottom:39px; }
-        .services-head p { max-width:270px; margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
-        .service-list { border-top:1px solid var(--ink); }
-        .service { display:grid; grid-template-columns:1fr 2fr .5fr auto; gap:25px; align-items:center; padding:23px 0; border-bottom:1px solid var(--line); }
-        .service:hover { padding-left:12px; padding-right:12px; background:#f2f2f2; }
-        .service-name { font:600 22px var(--display); }
-        .service-detail { color:var(--muted); font-size:13px; }
-        .service-time,.price { font:500 12px var(--mono); }
-        .price { color:var(--ink); text-align:right; }
+        .services-head p { max-width:270px; margin:0; color:var(--muted); font-size:12px; line-height:1.7; letter-spacing:.04em; }
+        .service-list { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+        .service { display:flex; flex-direction:column; align-items:flex-start; min-height:265px; padding:27px; border:1px solid var(--line); background:linear-gradient(135deg,#ffffff 0%,#eef0f2 100%); transition:.25s; }
+        .service:hover { border-color:#6f767e; background:linear-gradient(135deg,#ffffff 0%,#dfe3e7 100%); transform:translateY(-4px); box-shadow:0 16px 30px rgba(8,9,10,.08); }
+        .service-name { font:400 19px var(--display); letter-spacing:.03em; text-transform:uppercase; }
+        .service-detail { max-width:330px; margin:13px 0 24px; color:var(--muted); font-size:13px; line-height:1.6; }
+        .service-meta { display:flex; justify-content:space-between; width:100%; margin-top:auto; padding-top:17px; border-top:1px solid var(--line); }
+        .price { font:500 12px var(--mono); }
+        .price { color:var(--ink); }
+        .service-book { margin-top:21px; }
+        .reviews-band { padding:82px 0; color:var(--paper); background:var(--ink); }
+        .reviews-head { display:grid; grid-template-columns:1fr 1fr; gap:10%; align-items:end; margin-bottom:38px; }
+        .reviews-head h2 { margin-bottom:0; }
+        .rating { display:flex; flex-direction:column; align-items:flex-start; gap:7px; }
+        .rating-score { font:400 52px/.9 var(--display); letter-spacing:.03em; color:var(--bright); }
+        .stars { color:var(--silver); font-size:19px; letter-spacing:4px; }
+        .rating-note { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+        .review-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+        .review-card { display:flex; flex-direction:column; justify-content:space-between; min-height:170px; padding:25px; border:1px solid rgba(191,196,202,.26); background:#111315; }
+        .review-card blockquote { margin:0 0 26px; font:400 20px/1.35 var(--display); letter-spacing:.02em; }
+        .review-author { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
         .feature { padding:0; color:var(--paper); background:var(--ink); }
         .feature-grid { display:grid; grid-template-columns:1fr 1fr; min-height:470px; }
         .feature-image { min-height:470px; background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85') center/cover; filter:grayscale(1); }
         .feature-copy { display:flex; flex-direction:column; justify-content:center; padding:55px clamp(30px,7vw,100px); }
-        .feature-copy .eyebrow { color:#aaaaaa; }
+        .feature-copy .eyebrow { color:#9da4ab; }
         .feature-copy h2 { max-width:470px; }
-        .feature-copy p { max-width:405px; color:#bcbcbc; font-size:14px; line-height:1.7; }
-        .feature-copy .button { width:max-content; color:var(--paper); border-color:var(--paper); }
+        .feature-copy p { max-width:405px; color:#bfc4ca; font-size:13px; line-height:1.8; letter-spacing:.03em; }
+        .feature-copy .button { width:max-content; color:var(--paper); border-color:var(--silver); }
         .booking { display:grid; grid-template-columns:.8fr 1.2fr; gap:10%; }
         .booking-intro p { max-width:360px; color:var(--muted); line-height:1.7; }
         form { display:grid; grid-template-columns:1fr 1fr; gap:19px 16px; }
@@ -76,13 +90,14 @@
         .detail p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
         footer { color:var(--paper); background:var(--ink); }
         .footer-main { display:flex; align-items:center; justify-content:space-between; padding:35px 0; }
-        .footer-note { color:#8f887d; font:10px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
-        .footer-bottom { border-top:1px solid rgba(243,238,229,.15); padding:16px 0 22px; color:#6b665e; font:10px var(--mono); }
+        .footer-note { color:#9da4ab; font:10px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+        .footer-bottom { border-top:1px solid rgba(191,196,202,.18); padding:16px 0 22px; color:#6f767e; font:10px var(--mono); }
+        @keyframes rise-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
         @media (max-width:720px) {
             .wrap { padding:0 21px; } .nav-links { display:none; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; }
             section { padding:70px 0; } .intro,.booking,.visit { grid-template-columns:1fr; gap:35px; } h2 { font-size:46px; }
-            .services-head { display:block; } .services-head p { margin-top:15px; } .service { grid-template-columns:1fr auto; gap:8px 15px; }
-            .service-detail { grid-column:1/-1; grid-row:2; } .service-time { grid-row:3; margin-top:7px; } .price { grid-row:1; }
+            .services-head { display:block; } .services-head p { margin-top:15px; } .service-list { grid-template-columns:1fr; } .service { min-height:240px; }
+            .reviews-head,.review-grid { grid-template-columns:1fr; } .reviews-head { gap:28px; } .reviews-band { padding:70px 0; }
             .feature-grid { grid-template-columns:1fr; } .feature-image { min-height:290px; } .feature-copy { padding:58px 21px 65px; }
             form { grid-template-columns:1fr; } .full { grid-column:auto; } #form-status { grid-column:auto; } .details { gap:22px; }
             .footer-main { align-items:flex-start; gap:18px; flex-direction:column; }
@@ -90,22 +105,16 @@
     </style>
 </head>
 <body>
-    <header><div class="wrap"><nav aria-label="Main navigation"><a class="logo" href="#top">BTA<span>.</span></a><div class="nav-links"><a href="#services">Services</a><a href="#story">Our story</a><a href="#book">Book</a></div><a class="book-link" href="#book">Book a cut ↗</a></nav></div></header>
+    <header><div class="wrap"><nav aria-label="Main navigation"><a class="logo" href="#top" aria-label="BTA Haircuts home"><img src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1416353/biz_photo/319bfc0606434df0bc82b7d8f50e34-bta-haircuts-biz-photo-8b2b841578484220ac114ae731f4dc-booksy.jpeg?size=640x427" alt="BTA Haircuts logo"></a><div class="nav-links"><a href="#services">Services</a><a href="#story">Our story</a><a href="#book">Book</a></div><a class="book-link" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book a cut ↗</a></nav></div></header>
     <main id="top">
-        <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Grand Rapids, Michigan · Est. 2018</div><h1>Cut with<br><em>character.</em></h1><div class="hero-note">Classic barbering, contemporary energy, and a chair you will want to come back to.</div><div class="actions"><a class="button dark" href="#book">Book your chair ↗</a><a class="button" href="#services">Explore services ↓</a></div></div></div></section>
-        <section class="wrap intro" id="story"><div><div class="eyebrow">Our point of view</div><h2>Good hair.<br>Good energy.</h2></div><div class="intro-copy"><p>BTA is a neighborhood barbershop for people who care about the details. We pair old-school technique with a modern eye, creating cuts that look just as right three weeks later.</p><a class="button" href="#book">Find your style ↗</a></div></section>
-        <section class="wrap" id="services"><div class="services-head"><div><div class="eyebrow">The menu</div><h2>Services, simply.</h2></div><p>Every appointment begins with a consultation and ends with the mirror.</p></div><div class="service-list"><div class="service"><div class="service-name">The BTA Cut</div><div class="service-detail">Consultation, cut, finish and hot towel neck clean-up.</div><div class="service-time">45 MIN</div><div class="price">$48</div></div><div class="service"><div class="service-name">Skin Fade</div><div class="service-detail">A precise fade, blended down to the skin, finished sharp.</div><div class="service-time">50 MIN</div><div class="price">$55</div></div><div class="service"><div class="service-name">Beard Shape</div><div class="service-detail">Sculpt, line-up and condition with a warm towel finish.</div><div class="service-time">30 MIN</div><div class="price">$32</div></div><div class="service"><div class="service-name">Cut + Beard</div><div class="service-detail">The full reset. Haircut, beard shape and the works.</div><div class="service-time">70 MIN</div><div class="price">$72</div></div></div></section>
-        <section class="feature"><div class="feature-grid"><div class="feature-image" role="img" aria-label="Barber working on a client's haircut"></div><div class="feature-copy"><div class="eyebrow">The BTA standard</div><h2>Leave looking like yourself. Just sharper.</h2><p>No rushed appointments. No mystery products. Just considered work, a good chat, and a cut that fits the person wearing it.</p><a class="button" href="#book">Make an appointment ↗</a></div></div></section>
-        <section class="wrap booking" id="book"><div class="booking-intro"><div class="eyebrow">Reserve your chair</div><h2>Let’s get you dialed in.</h2><p>Tell us what you are looking for and we will get back to you within one business day.</p></div><form id="booking-form"><label>Full name<input name="name" type="text" placeholder="Your name" required></label><label>Email<input name="email" type="email" placeholder="you@email.com" required></label><label>Service<select name="service" required><option value="">Choose a service</option><option>The BTA Cut</option><option>Skin Fade</option><option>Beard Shape</option><option>Cut + Beard</option></select></label><label>Preferred date<input name="date" type="date" required></label><label class="full">Anything we should know?<textarea name="message" placeholder="Your usual cut, a new idea, or just say hello."></textarea></label><button class="button dark" type="submit">Request appointment ↗</button><div id="form-status" role="status">Thanks - your request is ready to send. We will be in touch soon.</div></form></section>
+        <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Precision Cuts | Real Results</div><h1>Cut with<br><em>character.</em></h1><div class="hero-note">Grand Rapids, Michigan · Est. 2018<br>Classic barbering, contemporary energy, and a chair you will want to come back to.</div><div class="actions"><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book your chair ↗</a><a class="button" href="#services">Explore services ↓</a></div></div></div></section>
+        <section class="wrap intro" id="story"><div><div class="eyebrow">Our point of view</div><h2>Good hair.<br>Good energy.</h2></div><div class="intro-copy"><p>BTA is a neighborhood barbershop for people who care about the details. We pair old-school technique with a modern eye, creating cuts that look just as right three weeks later.</p><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Find your style ↗</a></div></section>
+        <section class="wrap" id="services"><div class="services-head"><div><div class="eyebrow">The menu</div><h2>Services, simply.</h2></div><p>Every appointment begins with a consultation and ends with the mirror.</p></div><div class="service-list"><article class="service"><div class="service-name">Men's Haircut</div><div class="service-detail">A tailored cut with consultation, clean finish, and styling.</div><div class="service-meta"><div class="price">$49.99+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Haircut &amp; Beard</div><div class="service-detail">A complete reset with a sharp haircut and detailed beard shape.</div><div class="service-meta"><div class="price">$60+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Kids Cut</div><div class="service-detail">A patient, polished cut for younger clients, finished just right.</div><div class="service-meta"><div class="price">$30</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Beard Only</div><div class="service-detail">Sculpt, line-up, and condition for a clean, confident finish.</div><div class="service-meta"><div class="price">$40</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Senior Special <span>(65+)</span></div><div class="service-detail">A classic, comfortable cut with the same attention to every detail.</div><div class="service-meta"><div class="price">$24.99</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article></div></section>
+        <section class="reviews-band" id="reviews"><div class="wrap"><div class="reviews-head"><div><div class="eyebrow">Real words</div><h2>Good cuts get talked about.</h2></div><div class="rating"><div class="rating-score">4.9</div><div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div><div class="rating-note">Booksy rating · 68 verified reviews</div><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#business-reviews" target="_blank" rel="noreferrer">Read all reviews ↗</a></div></div><div class="review-grid"><article class="review-card"><blockquote>“Clean cuts everytime🔥”</blockquote><div class="review-author">Najee D. · Verified Booksy review</div></article><article class="review-card"><blockquote>“Great cut😚”</blockquote><div class="review-author">Mary · Verified Booksy review</div></article></div></div></section>
+        <section class="feature"><div class="feature-grid"><div class="feature-image" role="img" aria-label="Barber working on a client's haircut"></div><div class="feature-copy"><div class="eyebrow">The BTA standard</div><h2>Leave looking like yourself. Just sharper.</h2><p>No rushed appointments. No mystery products. Just considered work, a good chat, and a cut that fits the person wearing it.</p><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Make an appointment ↗</a></div></div></section>
+        <section class="wrap booking" id="book"><div class="booking-intro"><div class="eyebrow">Reserve your chair</div><h2>Let’s get you dialed in.</h2><p>Choose your service, barber, and time through our Booksy schedule.</p><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book on Booksy ↗</a></div><div class="booking-intro"><div class="eyebrow">Simple scheduling</div><h2>Your time, your way.</h2><p>Book online whenever it works for you. You will receive your appointment details directly through Booksy.</p></div></section>
         <section class="wrap visit"><div><div class="eyebrow">Come through</div><h2>Your chair is waiting.</h2><a class="button dark" href="https://maps.google.com/?q=950+28th+St+SE+Grand+Rapids+MI" target="_blank" rel="noreferrer">Get directions ↗</a></div><div class="details"><div class="detail"><h3>Find us</h3><p>950 28th St SE<br>Ste. A200-C, Building A<br>Grand Rapids, MI</p></div><div class="detail"><h3>Hours</h3><p>8:00 AM–6:00 PM<br>Every day</p></div><div class="detail"><h3>Say hello</h3><p>hello@btahaircuts.com<br>(718) 555-0148</p></div><div class="detail"><h3>Follow along</h3><p>@btahaircuts<br>@btastudio</p></div></div></section>
     </main>
-    <footer><div class="wrap footer-main"><div class="logo">BTA<span>.</span></div><div class="footer-note">Made for good hair days · Grand Rapids, MI</div><a class="book-link" href="#top">Back to top ↑</a></div><div class="wrap footer-bottom">© 2025 BTA Haircuts LLC</div></footer>
-    <script>
-        document.getElementById('booking-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            document.getElementById('form-status').style.display = 'block';
-            this.querySelector('button').textContent = 'Request received ✓';
-        });
-    </script>
+    <footer><div class="wrap footer-main"><a class="logo" href="#top" aria-label="BTA Haircuts home"><img src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1416353/biz_photo/319bfc0606434df0bc82b7d8f50e34-bta-haircuts-biz-photo-8b2b841578484220ac114ae731f4dc-booksy.jpeg?size=640x427" alt="BTA Haircuts logo"></a><div class="footer-note">Made for good hair days · Grand Rapids, MI</div><a class="book-link" href="#top">Back to top ↑</a></div><div class="wrap footer-bottom">© 2025 BTA Haircuts LLC</div></footer>
 </body>
 </html>
