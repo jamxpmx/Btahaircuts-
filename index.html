@@ -9,12 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --ink:#08090a; --paper:#f4f5f6; --silver:#bfc4ca; --bright:#ffffff; --muted:#737981; --line:rgba(191,196,202,.22); --pr-blue:#3d5f85; --pr-red:#7b1f2c; --display:'Sora',Arial,sans-serif; --body:'Inter',Arial,sans-serif; --mono:'Space Mono',monospace; }
+        :root { --ink:#090a0b; --paper:#f5f4ef; --silver:#c8c8c3; --bright:#ffffff; --muted:#70736f; --line:rgba(9,10,11,.16); --pr-blue:#3d5f85; --pr-red:#7b1f2c; --display:'Sora',Arial,sans-serif; --body:'Inter',Arial,sans-serif; --mono:'Space Mono',monospace; }
         * { box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--body); }
         a { color:inherit; text-decoration:none; }
-        .wrap { max-width:1240px; margin:auto; padding:0 34px; }
+        .wrap { max-width:1320px; margin:auto; padding:0 42px; }
         .eyebrow { color:var(--muted); font:600 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
         .heritage-tag { display:inline-flex; align-items:center; gap:10px; margin-top:12px; color:var(--pr-blue); font:700 9px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
         .heritage-tag::before { content:''; width:28px; height:1px; background:linear-gradient(90deg,var(--pr-red),var(--pr-blue)); }
@@ -24,57 +24,45 @@
         .button.dark:hover { color:var(--ink); background:var(--silver); }
         .button, .book-link { opacity:.96; }
         header { position:absolute; z-index:2; width:100%; color:var(--paper); }
-        nav { display:flex; align-items:center; justify-content:space-between; padding:25px 0; border-bottom:1px solid rgba(191,196,202,.28); }
+        nav { display:flex; align-items:center; justify-content:space-between; padding:25px 0; border-bottom:1px solid rgba(245,244,239,.24); }
         .logo { display:flex; align-items:center; }
         .logo img { display:block; width:116px; height:42px; object-fit:contain; filter:grayscale(1) contrast(1.15); }
         .nav-links { display:flex; gap:28px; font:700 10px var(--mono); letter-spacing:.16em; text-transform:uppercase; }
         .nav-links a:hover { color:var(--silver); }
         .book-link { border-bottom:1px solid var(--silver); padding-bottom:4px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
-        .hero { min-height:690px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
-        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,9,10,.88) 8%,rgba(8,9,10,.70) 58%,rgba(8,9,10,.48)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=85') center/cover; filter:grayscale(1) contrast(1.1) brightness(.95); }
+        .hero { min-height:760px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
+        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,9,10,.9) 5%,rgba(8,9,10,.58) 48%,rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=90') center/cover; filter:contrast(1.08) saturate(.82) brightness(.88); }
         .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.18; background:linear-gradient(115deg,transparent 0 47%,rgba(191,196,202,.75) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(191,196,202,.62) 76.1% 76.2%,transparent 76.3%); }
-        .hero .wrap { position:relative; z-index:1; min-height:690px; display:flex; align-items:flex-end; padding-bottom:78px; }
+        .hero .wrap { position:relative; z-index:1; min-height:760px; display:flex; align-items:flex-end; padding-bottom:82px; }
         .hero-copy { max-width:760px; animation:rise-in .8s ease-out both; }
-        h1 { margin:24px 0 25px; font:600 clamp(48px,8vw,102px)/.94 var(--display); letter-spacing:-.05em; text-transform:uppercase; }
+        h1 { margin:24px 0 25px; font:800 clamp(58px,10vw,144px)/.86 var(--display); letter-spacing:-.07em; text-transform:uppercase; }
         h1 em { color:var(--silver); font-style:normal; }
         .hero-note { display:flex; gap:16px; max-width:470px; color:#e2e6ea; font-size:13px; line-height:1.7; letter-spacing:.02em; }
         .hero-note::before { content:''; width:35px; height:1px; margin-top:10px; flex:none; background:var(--silver); }
         .actions { display:flex; flex-wrap:wrap; gap:18px; margin-top:34px; }
         .actions .button:first-child { border-color:var(--paper); }
-        section { padding:110px 0; }
-        .intro { display:grid; grid-template-columns:.8fr 1.2fr; gap:12%; border-bottom:1px solid var(--line); }
-        h2 { margin:14px 0 23px; font:600 clamp(32px,5vw,56px)/1.08 var(--display); letter-spacing:-.04em; text-transform:uppercase; }
+        section { padding:128px 0; }
+        h2 { margin:14px 0 23px; font:800 clamp(38px,6vw,76px)/.94 var(--display); letter-spacing:-.065em; text-transform:uppercase; }
         .intro-copy { align-self:end; max-width:465px; color:#505962; font-size:15px; line-height:1.8; }
         .intro-copy p { margin:0 0 27px; }
         .services-head { display:flex; align-items:end; justify-content:space-between; margin-bottom:39px; }
         .services-head p { max-width:270px; margin:0; color:var(--muted); font-size:12px; line-height:1.7; letter-spacing:.04em; }
-        .service-list { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-        .service { display:flex; flex-direction:column; align-items:flex-start; min-height:290px; padding:30px 28px 26px; border:1px solid var(--line); background:linear-gradient(135deg,#ffffff 0%,#f0f2f3 100%); transition:.25s; }
-        .service:hover { border-color:#6f767e; background:linear-gradient(135deg,#ffffff 0%,#e5e9ec 100%); transform:translateY(-4px); box-shadow:0 16px 30px rgba(8,9,10,.08); }
+        .service-list { display:grid; grid-template-columns:repeat(2,1fr); gap:0 42px; }
+        .service { display:flex; flex-direction:column; align-items:flex-start; min-height:250px; padding:32px 0 28px; border-top:1px solid var(--line); background:transparent; transition:.25s; }
+        .service:hover { padding-left:12px; background:transparent; transform:none; box-shadow:none; }
         .service-name { font:600 19px var(--display); letter-spacing:-.02em; text-transform:uppercase; }
         .service-detail { max-width:330px; margin:17px 0 26px; color:var(--muted); font-size:13px; line-height:1.7; }
         .service-meta { display:flex; justify-content:space-between; width:100%; margin-top:auto; padding-top:18px; border-top:1px solid var(--line); }
         .price { font:500 12px var(--mono); }
         .price { color:var(--ink); }
         .service-book { margin-top:21px; }
-        .reviews-band { padding:52px 0 72px; color:var(--paper); background:var(--ink); }
-        .reviews-head { display:grid; grid-template-columns:1fr 1fr; gap:12%; align-items:end; margin-bottom:42px; }
-        .reviews-head h2 { margin-bottom:0; }
-        .rating { display:flex; flex-direction:column; align-items:flex-start; gap:7px; }
-        .rating-score { font:600 52px/.9 var(--display); letter-spacing:-.03em; color:var(--bright); }
-        .stars { color:var(--silver); font-size:19px; letter-spacing:4px; }
-        .rating-note { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
-        .review-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-        .review-card { display:flex; flex-direction:column; justify-content:space-between; min-height:190px; padding:28px 26px; border:1px solid rgba(191,196,202,.26); background:#111315; }
-        .review-card blockquote { margin:0 0 26px; font:600 20px/1.35 var(--display); letter-spacing:-.015em; }
-        .review-author { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
         .social-section { padding-top:28px; }
         .social-head { display:flex; align-items:end; justify-content:space-between; gap:22px; margin-bottom:34px; }
         .social-head p { max-width:420px; margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
         .social-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-        .social-card { position:relative; min-height:340px; overflow:hidden; border:1px solid var(--line); background:var(--ink); }
+        .social-card { position:relative; min-height:420px; overflow:hidden; border:0; background:var(--ink); }
         .social-card:hover .social-image { transform:scale(1.04); }
-        .social-image { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .35s ease; filter:grayscale(1) contrast(1.05); }
+        .social-image { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .35s ease; filter:contrast(1.05) saturate(.86); }
         .social-image.one { background-image:linear-gradient(rgba(8,9,10,.08),rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=900&q=85'); }
         .social-image.two { background-image:linear-gradient(rgba(8,9,10,.08),rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85'); }
         .social-image.three { background-image:linear-gradient(rgba(8,9,10,.08),rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1521590832167-7ae2c8f44c27?auto=format&fit=crop&w=900&q=85'); }
@@ -86,7 +74,7 @@
         .experience-header { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
         .experience-header h2 { margin:12px 0 0; font-size:clamp(23px,2.8vw,36px); }
         .experience-tag { color:#c7ced6; font:700 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
-        .experience-layout { display:grid; grid-template-columns:1.5fr .8fr; gap:18px; align-items:stretch; perspective:1200px; }
+        .experience-layout { display:grid; grid-template-columns:1fr; gap:18px; align-items:stretch; perspective:1200px; }
         .experience-gallery { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; align-items:stretch; }
         .experience-video-card { position:relative; overflow:hidden; border:1px solid rgba(191,196,202,.26); border-radius:24px; background:#0b0d0f; box-shadow:0 12px 0 rgba(191,196,202,.08), 0 24px 48px rgba(0,0,0,.34); transform:translateY(0) rotateX(0deg); transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease; aspect-ratio:9 / 16; }
         .experience-video-card:hover { transform:translateY(-7px) rotateX(1.5deg); box-shadow:0 15px 0 rgba(191,196,202,.1), 0 32px 58px rgba(0,0,0,.42); }
@@ -100,23 +88,6 @@
         .gallery-toggle-icon::before { content:''; position:absolute; left:0; top:3px; width:5px; height:7px; background:currentColor; clip-path:polygon(0 25%, 45% 25%, 100% 0, 100% 100%, 45% 75%, 0 75%); }
         .gallery-toggle-icon::after { content:''; position:absolute; right:0; top:1px; width:7px; height:11px; border-right:1.5px solid currentColor; border-radius:0 100% 100% 0; opacity:.9; transition:opacity .2s, width .2s; }
         .gallery-toggle.is-muted .gallery-toggle-icon::after { width:0; opacity:0; }
-        .experience-review-pane { display:flex; flex-direction:column; justify-content:center; padding:22px 20px; border:1px solid rgba(191,196,202,.24); border-radius:24px; background:rgba(17,20,23,.75); box-shadow:0 12px 0 rgba(191,196,202,.06), 0 24px 48px rgba(0,0,0,.3); transform:translateY(0); transition:transform .35s ease, box-shadow .35s ease; min-height:100%; }
-        .experience-review-pane:hover { transform:translateY(-5px); box-shadow:0 15px 0 rgba(191,196,202,.08), 0 30px 54px rgba(0,0,0,.38); }
-        .experience-review-pane .eyebrow { color:#bfc4ca; }
-        .experience-review-pane h3 { margin:12px 0 16px; font:600 clamp(26px,2.8vw,34px)/1.08 var(--display); letter-spacing:-.04em; text-transform:uppercase; }
-        .experience-review-pane .rating { display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
-        .experience-review-pane .rating-score { font:600 42px/.9 var(--display); letter-spacing:-.04em; color:var(--bright); }
-        .experience-review-pane .stars { color:var(--silver); font-size:18px; letter-spacing:4px; }
-        .experience-review-pane .rating-note { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
-        .experience-review-pane .button { margin-top:18px; width:max-content; }
-        .feature { padding:0; color:var(--paper); background:var(--ink); }
-        .feature-grid { display:grid; grid-template-columns:1fr 1fr; min-height:470px; }
-        .feature-image { min-height:470px; background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85') center/cover; filter:grayscale(1); }
-        .feature-copy { display:flex; flex-direction:column; justify-content:center; padding:70px clamp(30px,7vw,100px); }
-        .feature-copy .eyebrow { color:#9da4ab; }
-        .feature-copy h2 { max-width:470px; }
-        .feature-copy p { max-width:405px; color:#bfc4ca; font-size:13px; line-height:1.8; letter-spacing:.03em; }
-        .feature-copy .button { width:max-content; color:var(--paper); border-color:var(--silver); }
         .booking { display:grid; grid-template-columns:.8fr 1.2fr; gap:12%; }
         .booking-intro p { max-width:360px; color:var(--muted); line-height:1.8; }
         form { display:grid; grid-template-columns:1fr 1fr; gap:19px 16px; }
@@ -138,12 +109,12 @@
         .footer-bottom { border-top:1px solid rgba(191,196,202,.18); padding:16px 0 22px; color:#6f767e; font:10px var(--mono); }
         @keyframes rise-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
         @media (max-width:720px) {
-            .wrap { padding:0 21px; } .nav-links { display:none; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; }
-            section { padding:70px 0; } .intro,.booking,.visit { grid-template-columns:1fr; gap:35px; } h2 { font-size:46px; }
+            .wrap { padding:0 21px; } .nav-links { display:none; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; } h1 { font-size:clamp(58px,17vw,92px); }
+            section { padding:78px 0; } .booking,.visit { grid-template-columns:1fr; gap:35px; } h2 { font-size:46px; }
             .services-head { display:block; } .services-head p { margin-top:15px; } .service-list { grid-template-columns:1fr; } .service { min-height:240px; }
-            .reviews-head,.review-grid,.social-grid { grid-template-columns:1fr; } .reviews-head { gap:28px; } .reviews-band { padding:70px 0; }
+            .social-grid { grid-template-columns:1fr; }
             .social-head { display:block; } .social-head p { margin-top:15px; }
-            .experience-wrap { padding:28px 16px 10px; } .experience-header { display:block; margin-bottom:14px; } .experience-header h2 { margin-top:10px; font-size:38px; } .experience-tag { display:block; margin-top:14px; line-height:1.5; } .experience-layout { grid-template-columns:1fr; gap:14px; } .experience-gallery { grid-template-columns:repeat(3, minmax(76vw, 1fr)); gap:12px; margin:0 -16px; padding:0 16px 12px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none; } .experience-gallery::-webkit-scrollbar { display:none; } .experience-video-card { aspect-ratio:9 / 14; scroll-snap-align:start; } .experience-review-pane { padding:26px 20px; } .feature-grid { grid-template-columns:1fr; } .feature-image { min-height:290px; } .feature-copy { padding:58px 21px 65px; }
+            .experience-wrap { padding:28px 16px 10px; } .experience-header { display:block; margin-bottom:14px; } .experience-header h2 { margin-top:10px; font-size:38px; } .experience-tag { display:block; margin-top:14px; line-height:1.5; } .experience-layout { grid-template-columns:1fr; gap:14px; } .experience-gallery { grid-template-columns:repeat(3, minmax(76vw, 1fr)); gap:12px; margin:0 -16px; padding:0 16px 12px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none; } .experience-gallery::-webkit-scrollbar { display:none; } .experience-video-card { aspect-ratio:9 / 14; scroll-snap-align:start; }
             form { grid-template-columns:1fr; } .full { grid-column:auto; } #form-status { grid-column:auto; } .details { gap:22px; }
             .footer-main { align-items:flex-start; gap:18px; flex-direction:column; }
         }
@@ -183,18 +154,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experience-review-pane">
-                        <div class="eyebrow">Real words</div>
-                        <h3>Good cuts get talked about.</h3>
-                        <div class="rating"><div class="rating-score">4.9</div><div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div><div class="rating-note">Booksy rating · 68 verified reviews</div></div>
-                        <a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#business-reviews" target="_blank" rel="noreferrer">Read all reviews ↗</a>
-                    </div>
                 </div>
             </div>
         </section>
         <section class="wrap" id="services"><div class="services-head"><div><div class="eyebrow">The menu</div><h2>Services, simply.</h2></div><p>Every appointment begins with a consultation and ends with the mirror.</p></div><div class="service-list"><article class="service"><div class="service-name">Men's Haircut</div><div class="service-detail">A tailored cut with consultation, clean finish, and styling.</div><div class="service-meta"><div class="price">$49.99+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Haircut &amp; Beard</div><div class="service-detail">A complete reset with a sharp haircut and detailed beard shape.</div><div class="service-meta"><div class="price">$60+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Kids Cut</div><div class="service-detail">A patient, polished cut for younger clients, finished just right.</div><div class="service-meta"><div class="price">$30</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Beard Only</div><div class="service-detail">Sculpt, line-up, and condition for a clean, confident finish.</div><div class="service-meta"><div class="price">$40</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Senior Special <span>(65+)</span></div><div class="service-detail">A classic, comfortable cut with the same attention to every detail.</div><div class="service-meta"><div class="price">$24.99</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article></div></section>
-        <section class="reviews-band" id="reviews"><div class="wrap"><div class="reviews-head"><div><div class="eyebrow">Real words</div><h2>Good cuts get talked about.</h2></div><div class="rating"><div class="rating-score">4.9</div><div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div><div class="rating-note">Booksy rating · 68 verified reviews</div><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#business-reviews" target="_blank" rel="noreferrer">Read all reviews ↗</a></div></div><div class="review-grid"><article class="review-card"><blockquote>“Clean cuts everytime🔥”</blockquote><div class="review-author">Najee D. · Verified Booksy review</div></article><article class="review-card"><blockquote>“Great cut😚”</blockquote><div class="review-author">Mary · Verified Booksy review</div></article></div></div></section>
-        <section class="feature"><div class="feature-grid"><div class="feature-image" role="img" aria-label="Barber working on a client's haircut"></div><div class="feature-copy"><div class="eyebrow">The BTA standard</div><h2>Leave looking like yourself. Just sharper.</h2><p>No rushed appointments. No mystery products. Just considered work, a good chat, and a cut that fits the person wearing it.</p><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Make an appointment ↗</a></div></div></section>
         <section class="wrap booking" id="book"><div class="booking-intro"><div class="eyebrow">Reserve your chair</div><h2>Let’s get you dialed in.</h2><p>Choose your service, barber, and time through our Booksy schedule.</p><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book on Booksy ↗</a></div><div class="booking-intro"><div class="eyebrow">Simple scheduling</div><h2>Your time, your way.</h2><p>Book online whenever it works for you. You will receive your appointment details directly through Booksy.</p></div></section>
         <section class="wrap visit"><div><div class="eyebrow">Come through</div><h2>Your chair is waiting.</h2><a class="button dark" href="https://maps.google.com/?q=950+28th+St+SE+Grand+Rapids+MI" target="_blank" rel="noreferrer">Get directions ↗</a></div><div class="details"><div class="detail"><h3>Find us</h3><p>950 28th St SE<br>Ste. A200-C, Building A<br>Grand Rapids, MI</p></div><div class="detail"><h3>Hours</h3><p>8:00 AM–6:00 PM<br>Mon-Sun</p></div></div></section>
     </main>
