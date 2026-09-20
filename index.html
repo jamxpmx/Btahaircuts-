@@ -57,7 +57,7 @@
         .price { font:500 12px var(--mono); }
         .price { color:var(--ink); }
         .service-book { margin-top:21px; }
-        .reviews-band { padding:96px 0; color:var(--paper); background:var(--ink); }
+        .reviews-band { padding:52px 0 72px; color:var(--paper); background:var(--ink); }
         .reviews-head { display:grid; grid-template-columns:1fr 1fr; gap:12%; align-items:end; margin-bottom:42px; }
         .reviews-head h2 { margin-bottom:0; }
         .rating { display:flex; flex-direction:column; align-items:flex-start; gap:7px; }
@@ -81,6 +81,26 @@
         .social-meta { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:22px 20px; background:linear-gradient(180deg,rgba(8,9,10,0) 24%,rgba(8,9,10,.7) 100%); }
         .social-tag { font:700 9px var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--silver); }
         .social-copy { margin-top:12px; font:600 18px var(--display); letter-spacing:-.02em; text-transform:uppercase; }
+        .experience-section { position:relative; padding:0; background:linear-gradient(180deg,#0b0d0f 0%,#111417 100%); color:var(--paper); }
+        .experience-wrap { max-width:1180px; margin:0 auto; padding:32px 34px 12px; }
+        .experience-header { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
+        .experience-header h2 { margin:12px 0 0; font-size:clamp(23px,2.8vw,36px); }
+        .experience-tag { color:#c7ced6; font:700 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
+        .experience-layout { display:grid; grid-template-columns:1.5fr .8fr; gap:18px; align-items:stretch; }
+        .experience-gallery { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; align-items:stretch; }
+        .experience-video-card { position:relative; overflow:hidden; border:1px solid rgba(191,196,202,.26); background:#0b0d0f; box-shadow:0 18px 48px rgba(0,0,0,.22); aspect-ratio:9 / 16; }
+        .experience-video-card video { display:block; width:100%; height:100%; object-fit:cover; background:#0b0d0f; }
+        .experience-gallery-controls { position:absolute; right:18px; bottom:18px; z-index:3; display:flex; align-items:center; justify-content:flex-end; gap:10px; pointer-events:auto; }
+        .gallery-toggle { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border:1px solid rgba(191,196,202,.5); background:rgba(11,13,15,.72); color:var(--bright); font-size:18px; cursor:pointer; transition:transform .2s, border-color .2s, background .2s; }
+        .gallery-toggle:hover { transform:translateY(-2px); border-color:var(--silver); background:rgba(17,20,23,.82); }
+        .experience-review-pane { display:flex; flex-direction:column; justify-content:center; padding:22px 20px; border:1px solid rgba(191,196,202,.24); background:rgba(17,20,23,.75); min-height:100%; }
+        .experience-review-pane .eyebrow { color:#bfc4ca; }
+        .experience-review-pane h3 { margin:12px 0 16px; font:600 clamp(26px,2.8vw,34px)/1.08 var(--display); letter-spacing:-.04em; text-transform:uppercase; }
+        .experience-review-pane .rating { display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+        .experience-review-pane .rating-score { font:600 42px/.9 var(--display); letter-spacing:-.04em; color:var(--bright); }
+        .experience-review-pane .stars { color:var(--silver); font-size:18px; letter-spacing:4px; }
+        .experience-review-pane .rating-note { color:#9da4ab; font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+        .experience-review-pane .button { margin-top:18px; width:max-content; }
         .feature { padding:0; color:var(--paper); background:var(--ink); }
         .feature-grid { display:grid; grid-template-columns:1fr 1fr; min-height:470px; }
         .feature-image { min-height:470px; background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85') center/cover; filter:grayscale(1); }
@@ -115,7 +135,7 @@
             .services-head { display:block; } .services-head p { margin-top:15px; } .service-list { grid-template-columns:1fr; } .service { min-height:240px; }
             .reviews-head,.review-grid,.social-grid { grid-template-columns:1fr; } .reviews-head { gap:28px; } .reviews-band { padding:70px 0; }
             .social-head { display:block; } .social-head p { margin-top:15px; }
-            .feature-grid { grid-template-columns:1fr; } .feature-image { min-height:290px; } .feature-copy { padding:58px 21px 65px; }
+            .experience-wrap { padding:32px 21px 12px; } .experience-header { display:block; } .experience-header h2 { margin-top:10px; } .experience-layout { grid-template-columns:1fr; } .experience-gallery { grid-template-columns:1fr; } .experience-video-card { aspect-ratio:9 / 14; } .feature-grid { grid-template-columns:1fr; } .feature-image { min-height:290px; } .feature-copy { padding:58px 21px 65px; }
             form { grid-template-columns:1fr; } .full { grid-column:auto; } #form-status { grid-column:auto; } .details { gap:22px; }
             .footer-main { align-items:flex-start; gap:18px; flex-direction:column; }
         }
@@ -126,6 +146,39 @@
     <main id="top">
         <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Precision Cuts | Real Results</div><div class="heritage-tag">Boricua roots · precision craft</div><h1>Cut with<br><em>character.</em></h1><div class="hero-note">Grand Rapids, Michigan · Est. 2023<br>Friendly, sharp, and built for your everyday confidence.</div><div class="actions"><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book your chair ↗</a><a class="button" href="#services">Explore services ↓</a></div></div></div></section>
         <section class="wrap intro" id="story"><div><div class="eyebrow">Our point of view</div><h2>Good hair.<br>Good energy.</h2></div><div class="intro-copy"><p>BTA is a neighborhood barbershop rooted in precision, identity, and community. We blend old-school discipline with a sharp modern eye, creating cuts that feel clean, confident, and easy to wear every day.</p><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Find your style ↗</a></div></section>
+        <section class="experience-section" aria-labelledby="experience-title">
+            <div class="experience-wrap">
+                <div class="experience-header">
+                    <div>
+                        <div class="eyebrow">The BTA Experience</div>
+                        <h2 id="experience-title">Precision Cuts | Real Results.</h2>
+                    </div>
+                    <div class="experience-tag">Grand Rapids · Premium Barbering</div>
+                </div>
+                <div class="experience-layout">
+                    <div class="experience-gallery">
+                        <div class="experience-video-card">
+                            <video id="bta-video" src="Videos/BTA AI VID.mp4" autoplay muted loop playsinline preload="auto" aria-label="BTA Haircuts promotional video"></video>
+                            <div class="experience-gallery-controls">
+                                <button class="gallery-toggle" type="button" data-video-id="bta-video" aria-label="Mute or unmute video">🔊</button>
+                            </div>
+                        </div>
+                        <div class="experience-video-card">
+                            <video id="bta-interview-video" src="Videos/BTApublicinterview.mp4" autoplay muted loop playsinline preload="auto" aria-label="BTA public interview video"></video>
+                            <div class="experience-gallery-controls">
+                                <button class="gallery-toggle" type="button" data-video-id="bta-interview-video" aria-label="Mute or unmute video">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-review-pane">
+                        <div class="eyebrow">Real words</div>
+                        <h3>Good cuts get talked about.</h3>
+                        <div class="rating"><div class="rating-score">4.9</div><div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div><div class="rating-note">Booksy rating · 68 verified reviews</div></div>
+                        <a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#business-reviews" target="_blank" rel="noreferrer">Read all reviews ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="wrap" id="services"><div class="services-head"><div><div class="eyebrow">The menu</div><h2>Services, simply.</h2></div><p>Every appointment begins with a consultation and ends with the mirror.</p></div><div class="service-list"><article class="service"><div class="service-name">Men's Haircut</div><div class="service-detail">A tailored cut with consultation, clean finish, and styling.</div><div class="service-meta"><div class="price">$49.99+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Haircut &amp; Beard</div><div class="service-detail">A complete reset with a sharp haircut and detailed beard shape.</div><div class="service-meta"><div class="price">$60+</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Kids Cut</div><div class="service-detail">A patient, polished cut for younger clients, finished just right.</div><div class="service-meta"><div class="price">$30</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Beard Only</div><div class="service-detail">Sculpt, line-up, and condition for a clean, confident finish.</div><div class="service-meta"><div class="price">$40</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article><article class="service"><div class="service-name">Senior Special <span>(65+)</span></div><div class="service-detail">A classic, comfortable cut with the same attention to every detail.</div><div class="service-meta"><div class="price">$24.99</div></div><a class="button service-book" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book this service ↗</a></article></div></section>
         <section class="reviews-band" id="reviews"><div class="wrap"><div class="reviews-head"><div><div class="eyebrow">Real words</div><h2>Good cuts get talked about.</h2></div><div class="rating"><div class="rating-score">4.9</div><div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div><div class="rating-note">Booksy rating · 68 verified reviews</div><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#business-reviews" target="_blank" rel="noreferrer">Read all reviews ↗</a></div></div><div class="review-grid"><article class="review-card"><blockquote>“Clean cuts everytime🔥”</blockquote><div class="review-author">Najee D. · Verified Booksy review</div></article><article class="review-card"><blockquote>“Great cut😚”</blockquote><div class="review-author">Mary · Verified Booksy review</div></article></div></div></section>
         <section class="feature"><div class="feature-grid"><div class="feature-image" role="img" aria-label="Barber working on a client's haircut"></div><div class="feature-copy"><div class="eyebrow">The BTA standard</div><h2>Leave looking like yourself. Just sharper.</h2><p>No rushed appointments. No mystery products. Just considered work, a good chat, and a cut that fits the person wearing it.</p><a class="button" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Make an appointment ↗</a></div></div></section>
@@ -133,5 +186,21 @@
         <section class="wrap visit"><div><div class="eyebrow">Come through</div><h2>Your chair is waiting.</h2><a class="button dark" href="https://maps.google.com/?q=950+28th+St+SE+Grand+Rapids+MI" target="_blank" rel="noreferrer">Get directions ↗</a></div><div class="details"><div class="detail"><h3>Find us</h3><p>950 28th St SE<br>Ste. A200-C, Building A<br>Grand Rapids, MI</p></div><div class="detail"><h3>Hours</h3><p>8:00 AM–6:00 PM<br>Mon-Sun</p></div></div></section>
     </main>
     <footer><div class="wrap footer-main"><a class="logo" href="#top" aria-label="BTA Haircuts home"><img src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1416353/biz_photo/319bfc0606434df0bc82b7d8f50e34-bta-haircuts-biz-photo-8b2b841578484220ac114ae731f4dc-booksy.jpeg?size=640x427" alt="BTA Haircuts logo"></a><div class="footer-note">Made for good hair days · Grand Rapids, MI</div><a class="book-link" href="#top">Back to top ↑</a></div><div class="wrap footer-bottom">© 2025 BTA Haircuts LLC</div></footer>
+    <script>
+        document.querySelectorAll('.gallery-toggle').forEach((button) => {
+            const videoId = button.getAttribute('data-video-id');
+            const video = document.getElementById(videoId);
+
+            if (!video) return;
+
+            button.addEventListener('click', () => {
+                const isMuted = video.muted;
+                video.muted = !isMuted;
+                button.textContent = isMuted ? '🔇' : '🔊';
+                button.setAttribute('aria-label', isMuted ? 'Mute video' : 'Unmute video');
+                video.volume = isMuted ? 1 : 0;
+            });
+        });
+    </script>
 </body>
 </html>`
