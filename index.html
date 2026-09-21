@@ -76,8 +76,12 @@
         .experience-header { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
         .experience-header h2 { margin:12px 0 0; font-size:clamp(23px,2.8vw,36px); }
         .experience-tag { color:#c7ced6; font:700 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
+        .experience-social { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-top:20px; color:#c7ced6; font:700 10px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+        .experience-social-links { display:flex; gap:20px; }
+        .experience-social a { border-bottom:1px solid rgba(244,245,246,.6); padding-bottom:4px; transition:color .2s, border-color .2s; }
+        .experience-social a:hover { color:var(--bright); border-color:var(--bright); }
         .experience-layout { display:grid; grid-template-columns:1fr; gap:18px; align-items:stretch; perspective:1200px; }
-        .experience-gallery { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; align-items:stretch; }
+        .experience-gallery { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:18px; align-items:stretch; }
         .experience-video-card { position:relative; overflow:hidden; border:1px solid rgba(191,196,202,.26); border-radius:24px; background:#0b0d0f; box-shadow:0 12px 0 rgba(191,196,202,.08), 0 24px 48px rgba(0,0,0,.34); transform:translateY(0) rotateX(0deg); transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease; aspect-ratio:9 / 16; }
         .experience-video-card:hover { transform:translateY(-7px) rotateX(1.5deg); box-shadow:0 15px 0 rgba(191,196,202,.1), 0 32px 58px rgba(0,0,0,.42); }
         .experience-video-card video { display:block; width:100%; height:100%; object-fit:cover; background:#0b0d0f; }
@@ -147,6 +151,18 @@
                             </div>
                         </div>
                         <div class="experience-video-card">
+                            <video id="bta-getwith-video" src="Videos/BTAgetwith.mp4" autoplay muted loop playsinline preload="auto" aria-label="BTA Haircuts get with video"></video>
+                            <div class="experience-gallery-controls">
+                                <button class="gallery-toggle is-muted" type="button" data-video-id="bta-getwith-video" aria-label="Unmute video"><span class="gallery-toggle-icon" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                        <div class="experience-video-card">
+                            <video id="bta-prank-video" src="Videos/BTAPRANK.mp4" autoplay muted loop playsinline preload="auto" aria-label="BTA Haircuts prank video"></video>
+                            <div class="experience-gallery-controls">
+                                <button class="gallery-toggle is-muted" type="button" data-video-id="bta-prank-video" aria-label="Unmute video"><span class="gallery-toggle-icon" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                        <div class="experience-video-card">
                             <video id="bta-interview-video" src="Videos/BTApublicinterview.mp4" autoplay muted loop playsinline preload="auto" aria-label="BTA public interview video"></video>
                             <div class="experience-gallery-controls">
                                 <button class="gallery-toggle is-muted" type="button" data-video-id="bta-interview-video" aria-label="Unmute video"><span class="gallery-toggle-icon" aria-hidden="true"></span></button>
@@ -158,6 +174,13 @@
                                 <button class="gallery-toggle is-muted" type="button" data-video-id="bta-video" aria-label="Unmute video"><span class="gallery-toggle-icon" aria-hidden="true"></span></button>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="experience-social">
+                    <span>To see the work, check out the socials.</span>
+                    <div class="experience-social-links">
+                        <a href="https://www.instagram.com/btahaircuts/" target="_blank" rel="noreferrer">Instagram ↗</a>
+                        <a href="https://www.facebook.com/p/BTA-Haircuts-61556625807276/" target="_blank" rel="noreferrer">Facebook ↗</a>
                     </div>
                 </div>
             </div>
