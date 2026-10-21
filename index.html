@@ -36,11 +36,9 @@
         .nav-links a:hover { color:var(--silver); }
         .book-link { border-bottom:1px solid var(--silver); padding-bottom:4px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
         .hero { min-height:760px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
-        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,11,9,.94) 5%,rgba(18,15,12,.72) 48%,rgba(32,19,11,.34)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=90') center/cover; filter:contrast(1.12) saturate(.62) brightness(.78); }
+        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,11,9,.94) 5%,rgba(18,15,12,.72) 48%,rgba(32,19,11,.34)),url('Holloweenphotobta.avif') center/cover; filter:contrast(1.12) saturate(.72) brightness(.78); }
         .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.27; background:linear-gradient(115deg,transparent 0 47%,rgba(240,120,50,.56) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(185,190,155,.5) 76.1% 76.2%,transparent 76.3%),repeating-linear-gradient(0deg,transparent 0 7px,rgba(240,120,50,.035) 8px 9px); }
         .hero .wrap { position:relative; z-index:1; min-height:760px; display:flex; align-items:flex-end; padding-bottom:82px; }
-        .hero .wrap::after, .experience-wrap::after { content:''; position:absolute; pointer-events:none; background:repeating-radial-gradient(ellipse at 100% 0,transparent 0 18px,rgba(255,205,165,.72) 19px 20px,transparent 21px 37px),repeating-conic-gradient(from 0deg at 100% 0,transparent 0deg 14deg,rgba(255,205,165,.8) 14.5deg 15deg,transparent 15.5deg 45deg); -webkit-mask-image:radial-gradient(ellipse at 100% 0,#000 0%,#000 34%,transparent 78%); mask-image:radial-gradient(ellipse at 100% 0,#000 0%,#000 34%,transparent 78%); transform:perspective(600px) rotateY(-14deg) rotateX(10deg); transform-origin:top right; filter:drop-shadow(2px 2px 0 rgba(240,120,50,.55)) drop-shadow(9px 12px 9px rgba(0,0,0,.42)); }
-        .hero .wrap::after { top:24px; right:42px; z-index:0; width:min(24vw,280px); aspect-ratio:1; opacity:.52; }
         .hero-copy { position:relative; z-index:1; max-width:760px; animation:rise-in .8s ease-out both; }
         h1 { margin:24px 0 25px; font:800 clamp(58px,10vw,144px)/.86 var(--display); letter-spacing:-.07em; text-transform:uppercase; }
         h1 em { color:var(--silver); font-style:normal; text-shadow:0 0 34px rgba(240,120,50,.22); }
@@ -78,7 +76,6 @@
         .social-copy { margin-top:12px; font:600 18px var(--display); letter-spacing:-.02em; text-transform:uppercase; }
         .experience-section { position:relative; padding:0; background:linear-gradient(180deg,#11120f 0%,#1a1712 100%); color:var(--paper); }
         .experience-wrap { position:relative; max-width:1180px; margin:0 auto; padding:32px 34px 12px; }
-        .experience-wrap::after { top:22px; right:34px; z-index:0; width:150px; aspect-ratio:1; opacity:.32; }
         .experience-header { position:relative; z-index:1; display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
         .experience-header h2 { margin:12px 0 0; font-size:clamp(23px,2.8vw,36px); }
         .experience-tag { color:#c7ced6; font:700 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
@@ -135,7 +132,7 @@
         input:focus, select:focus, textarea:focus { border-color:#bd4f1d; box-shadow:0 0 0 2px rgba(189,79,29,.14); }
         @keyframes rise-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
         @media (max-width:720px) {
-            .wrap { padding-left:max(21px, env(safe-area-inset-left)); padding-right:max(21px, env(safe-area-inset-right)); } header nav { flex-wrap:wrap; padding-top:max(18px, env(safe-area-inset-top)); } .nav-links { display:flex; order:3; flex-basis:100%; justify-content:space-between; gap:12px; padding-top:14px; font-size:8px; letter-spacing:.08em; } .logo img { width:100px; height:38px; } .book-link { min-height:44px; display:inline-flex; align-items:center; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; } .hero .wrap { padding-bottom:58px; } .hero .wrap::after { top:18px; right:max(21px, env(safe-area-inset-right)); width:min(38vw,160px); } h1 { font-size:clamp(58px,17vw,92px); } h1 em { display:inline-block; font-size:clamp(48px,15vw,82px); }
+            .wrap { padding-left:max(21px, env(safe-area-inset-left)); padding-right:max(21px, env(safe-area-inset-right)); } header nav { flex-wrap:wrap; padding-top:max(18px, env(safe-area-inset-top)); } .nav-links { display:flex; order:3; flex-basis:100%; justify-content:space-between; gap:12px; padding-top:14px; font-size:8px; letter-spacing:.08em; } .logo img { width:100px; height:38px; } .book-link { min-height:44px; display:inline-flex; align-items:center; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; } .hero .wrap { padding-bottom:58px; } h1 { font-size:clamp(58px,17vw,92px); } h1 em { display:inline-block; font-size:clamp(48px,15vw,82px); }
             section { padding:78px 0; } .booking,.visit { grid-template-columns:1fr; gap:35px; } h2 { font-size:46px; }
             .services-head { display:block; } .services-head p { margin-top:15px; } .service-list { grid-template-columns:1fr; } .service { min-height:240px; }
             .social-grid { grid-template-columns:1fr; }
@@ -155,7 +152,7 @@
             <div class="experience-wrap">
                 <div class="experience-header">
                     <div>
-                        <div class="eyebrow">The BTA Experience <span class="spooky-emoji" aria-hidden="true">🕸️</span></div>
+                        <div class="eyebrow">The BTA Experience</div>
                         <h2 id="experience-title">Precision Cuts | Real Results.</h2>
                     </div>
                     <div class="experience-tag">Grand Rapids · Premium Barbering</div>
