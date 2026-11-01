@@ -9,18 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --ink:#11110f; --paper:#e9e5d8; --silver:#f07832; --bright:#fff9ed; --muted:#747365; --line:rgba(17,17,15,.2); --pr-blue:#79806a; --pr-red:#f07832; --display:'Sora',Arial,sans-serif; --body:'Inter',Arial,sans-serif; --mono:'Space Mono',monospace; }
+        :root { --ink:#090a0b; --paper:#f5f4ef; --silver:#c8c8c3; --bright:#fff; --muted:#70736f; --line:rgba(9,10,11,.16); --pr-blue:#3d5f85; --pr-red:#7b1f2c; --display:'Sora',Arial,sans-serif; --body:'Inter',Arial,sans-serif; --mono:'Space Mono',monospace; }
         * { box-sizing:border-box; }
         html { scroll-behavior:smooth; overflow-x:hidden; }
         body { min-width:320px; margin:0; color:var(--ink); background:var(--paper); font-family:var(--body); overflow-x:hidden; }
         img, video { max-width:100%; }
         a, button { touch-action:manipulation; }
-        body::before { content:''; position:fixed; z-index:0; inset:0; pointer-events:none; background:repeating-linear-gradient(135deg,rgba(75,78,57,.025) 0 1px,transparent 1px 9px),url('BTAlogo.jpg') center 54% / 560px auto no-repeat; opacity:.08; mix-blend-mode:multiply; }
+        body::before { content:''; position:fixed; z-index:0; inset:0; pointer-events:none; background:url('BTAlogo.jpg') center 54% / 560px auto no-repeat; opacity:.045; mix-blend-mode:multiply; }
         body > * { position:relative; z-index:1; }
         a { color:inherit; text-decoration:none; }
         .wrap { max-width:1320px; margin:auto; padding:0 42px; }
         .eyebrow { color:var(--muted); font:600 10px var(--mono); letter-spacing:.18em; text-transform:uppercase; }
-        .spooky-emoji { display:inline-block; margin:0 .12em; font-size:1.9em; line-height:1; letter-spacing:normal; vertical-align:-.22em; filter:drop-shadow(0 0 5px rgba(240,120,50,.8)); }
+        .spooky-emoji { display:none; }
         .heritage-tag { display:inline-flex; align-items:center; gap:10px; margin-top:12px; color:var(--pr-blue); font:700 9px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
         .heritage-tag::before { content:''; width:28px; height:1px; background:linear-gradient(90deg,var(--pr-red),var(--pr-blue)); }
         .button { display:inline-flex; align-items:center; gap:14px; border:1px solid currentColor; padding:15px 18px; font:700 10px var(--mono); letter-spacing:.12em; text-transform:uppercase; transition:color .25s,background .25s,transform .25s,border-color .25s; }
@@ -36,12 +36,12 @@
         .nav-links a:hover { color:var(--silver); }
         .book-link { border-bottom:1px solid var(--silver); padding-bottom:4px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
         .hero { min-height:760px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
-        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(10,11,9,.94) 5%,rgba(18,15,12,.72) 48%,rgba(32,19,11,.34)),url('Holloweenphotobta.avif') center/cover; filter:contrast(1.12) saturate(.72) brightness(.78); }
-        .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.27; background:linear-gradient(115deg,transparent 0 47%,rgba(240,120,50,.56) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(185,190,155,.5) 76.1% 76.2%,transparent 76.3%),repeating-linear-gradient(0deg,transparent 0 7px,rgba(240,120,50,.035) 8px 9px); }
+        .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,9,10,.9) 5%,rgba(8,9,10,.58) 48%,rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=90') center/cover; filter:contrast(1.08) saturate(.82) brightness(.88); }
+        .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.18; background:linear-gradient(115deg,transparent 0 47%,rgba(191,196,202,.75) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(191,196,202,.62) 76.1% 76.2%,transparent 76.3%); }
         .hero .wrap { position:relative; z-index:1; min-height:760px; display:flex; align-items:flex-end; padding-bottom:82px; }
         .hero-copy { position:relative; z-index:1; max-width:760px; animation:rise-in .8s ease-out both; }
         h1 { margin:24px 0 25px; font:800 clamp(58px,10vw,144px)/.86 var(--display); letter-spacing:-.07em; text-transform:uppercase; }
-        h1 em { color:var(--silver); font-style:normal; text-shadow:0 0 34px rgba(240,120,50,.22); }
+        h1 em { color:var(--silver); font-style:normal; }
         .hero-note { display:flex; gap:16px; max-width:470px; color:#e2e6ea; font-size:13px; line-height:1.7; letter-spacing:.02em; }
         .hero-note::before { content:''; width:35px; height:1px; margin-top:10px; flex:none; background:var(--silver); }
         .actions { display:flex; flex-wrap:wrap; gap:18px; margin-top:34px; }
@@ -74,7 +74,7 @@
         .social-meta { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:22px 20px; background:linear-gradient(180deg,rgba(8,9,10,0) 24%,rgba(8,9,10,.7) 100%); }
         .social-tag { font:700 9px var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--silver); }
         .social-copy { margin-top:12px; font:600 18px var(--display); letter-spacing:-.02em; text-transform:uppercase; }
-        .experience-section { position:relative; padding:0; background:linear-gradient(180deg,#11120f 0%,#1a1712 100%); color:var(--paper); }
+        .experience-section { position:relative; padding:0; background:linear-gradient(180deg,#0b0d0f 0%,#111417 100%); color:var(--paper); }
         .experience-wrap { position:relative; max-width:1180px; margin:0 auto; padding:32px 34px 12px; }
         .experience-header { position:relative; z-index:1; display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:16px; }
         .experience-header h2 { margin:12px 0 0; font-size:clamp(23px,2.8vw,36px); }
@@ -85,8 +85,8 @@
         .experience-social a:hover { color:var(--bright); border-color:var(--bright); }
         .experience-layout { display:grid; grid-template-columns:1fr; gap:18px; align-items:stretch; perspective:1200px; }
         .experience-gallery { position:relative; z-index:1; display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:18px; align-items:stretch; }
-        .experience-video-card { position:relative; overflow:hidden; border:1px solid rgba(240,120,50,.4); border-radius:12px; background:#0b0d0f; box-shadow:0 8px 0 rgba(240,120,50,.1), 0 24px 48px rgba(0,0,0,.4); transform:translateY(0) rotateX(0deg); transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease; aspect-ratio:9 / 16; }
-        .experience-video-card:hover { transform:translateY(-7px) rotateX(1.5deg); box-shadow:0 11px 0 rgba(240,120,50,.16), 0 32px 58px rgba(0,0,0,.48); }
+        .experience-video-card { position:relative; overflow:hidden; border:1px solid rgba(191,196,202,.26); border-radius:12px; background:#0b0d0f; box-shadow:0 8px 0 rgba(191,196,202,.08), 0 24px 48px rgba(0,0,0,.4); transform:translateY(0) rotateX(0deg); transform-style:preserve-3d; transition:transform .35s ease, box-shadow .35s ease; aspect-ratio:9 / 16; }
+        .experience-video-card:hover { transform:translateY(-7px) rotateX(1.5deg); box-shadow:0 11px 0 rgba(191,196,202,.1), 0 32px 58px rgba(0,0,0,.48); }
         .experience-video-card video { display:block; width:100%; height:100%; object-fit:cover; background:#0b0d0f; }
         .experience-gallery-controls { position:absolute; right:16px; bottom:16px; z-index:3; display:flex; align-items:center; justify-content:flex-end; gap:10px; pointer-events:auto; }
         .gallery-toggle { position:relative; display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; padding:0; border:1px solid rgba(244,245,246,.6); border-radius:50%; background:rgba(8,9,10,.62); color:var(--bright); box-shadow:0 8px 22px rgba(0,0,0,.3); backdrop-filter:blur(8px); cursor:pointer; transition:transform .2s, border-color .2s, background .2s; }
@@ -115,21 +115,17 @@
         .contact-label { display:block; margin-bottom:4px; color:var(--ink); font:500 10px var(--mono); letter-spacing:.1em; text-transform:uppercase; }
         .map-address { text-decoration:underline; text-decoration-color:var(--silver); text-underline-offset:4px; transition:color .2s, text-decoration-color .2s; }
         .map-address:hover { color:var(--ink); text-decoration-color:var(--ink); }
-        footer { color:var(--paper); background:#11110f; border-top:2px solid var(--silver); }
+        footer { color:var(--paper); background:var(--ink); }
         .footer-main { display:flex; align-items:center; justify-content:space-between; padding:35px 0; }
         .footer-note { color:#9da4ab; font:10px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
         .footer-bottom { border-top:1px solid rgba(191,196,202,.18); padding:16px 0 22px; color:#6f767e; font:10px var(--mono); }
         .eyebrow { color:var(--muted); }
-        .heritage-tag { color:#b9c09a; }
-        .button.dark { color:#fff9ed; background:#29251e; border-color:var(--silver); }
+        .heritage-tag { color:var(--pr-blue); }
+        .button.dark { color:var(--bright); background:var(--ink); }
         .button.dark:hover { color:var(--ink); background:var(--silver); }
         .nav-links a:hover, .book-link:hover { color:var(--silver); }
-        .service { border-color:rgba(17,17,15,.24); }
-        .service:hover .service-name { color:#bd4f1d; }
-        .social-card { border-bottom:2px solid var(--silver); }
-        .social-image { filter:contrast(1.08) saturate(.68) sepia(.12); }
-        .social-tag { color:#ffad70; }
-        input:focus, select:focus, textarea:focus { border-color:#bd4f1d; box-shadow:0 0 0 2px rgba(189,79,29,.14); }
+        .social-tag { color:var(--silver); }
+        input:focus, select:focus, textarea:focus { border-color:var(--ink); box-shadow:0 0 0 2px rgba(11,11,11,.12); }
         @keyframes rise-in { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
         @media (max-width:720px) {
             .wrap { padding-left:max(21px, env(safe-area-inset-left)); padding-right:max(21px, env(safe-area-inset-right)); } header nav { flex-wrap:wrap; padding-top:max(18px, env(safe-area-inset-top)); } .nav-links { display:flex; order:3; flex-basis:100%; justify-content:space-between; gap:12px; padding-top:14px; font-size:8px; letter-spacing:.08em; } .logo img { width:100px; height:38px; } .book-link { min-height:44px; display:inline-flex; align-items:center; } .hero,.hero .wrap { min-height:650px; } .hero::after { background-position:62% center; } .hero .wrap { padding-bottom:58px; } h1 { font-size:clamp(58px,17vw,92px); } h1 em { display:inline-block; font-size:clamp(48px,15vw,82px); }
@@ -147,7 +143,7 @@
 <body>
     <header><div class="wrap"><nav aria-label="Main navigation"><a class="logo" href="#top" aria-label="BTA Haircuts home"><img src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/1416353/biz_photo/319bfc0606434df0bc82b7d8f50e34-bta-haircuts-biz-photo-8b2b841578484220ac114ae731f4dc-booksy.jpeg?size=640x427" alt="BTA Haircuts logo"></a><div class="nav-links"><a href="#services">Services</a><a href="#book">Book</a><a href="https://www.instagram.com/btahaircuts/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.facebook.com/p/BTA-Haircuts-61556625807276/" target="_blank" rel="noreferrer">Facebook</a></div><a class="book-link" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">Book Today ↗</a></nav></div></header>
     <main id="top">
-        <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow"><span class="spooky-emoji" aria-hidden="true">🎃</span> Spooky season · Precision Cuts</div><div class="heritage-tag">Boricua roots · precision craft</div><h1>Cut with<br><em>character.</em></h1><div class="hero-note">Grand Rapids, Michigan · Est. 2023<br>Friendly, sharp, and built for your everyday confidence.</div><div class="actions"><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">BOOK HERE ↗</a><a class="button" href="#services">Explore services ↓</a></div></div></div></section>
+        <section class="hero"><div class="wrap"><div class="hero-copy"><div class="eyebrow">Precision Cuts</div><div class="heritage-tag">Boricua roots · precision craft</div><h1>Cut with<br><em>character.</em></h1><div class="hero-note">Grand Rapids, Michigan · Est. 2023<br>Friendly, sharp, and built for your everyday confidence.</div><div class="actions"><a class="button dark" href="https://booksy.com/en-us/1416353_bta-haircuts_barber-shop_23359_grand-rapids#ba_s=sr_1" target="_blank" rel="noreferrer">BOOK HERE ↗</a><a class="button" href="#services">Explore services ↓</a></div></div></div></section>
         <section class="experience-section" aria-labelledby="experience-title">
             <div class="experience-wrap">
                 <div class="experience-header">
