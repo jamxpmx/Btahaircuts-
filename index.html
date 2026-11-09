@@ -37,7 +37,7 @@
         .book-link { border-bottom:1px solid var(--silver); padding-bottom:4px; font:700 10px var(--mono); letter-spacing:.14em; text-transform:uppercase; }
         .hero { min-height:760px; color:var(--paper); background:var(--ink); position:relative; overflow:hidden; }
         .hero::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,9,10,.9) 5%,rgba(8,9,10,.58) 48%,rgba(8,9,10,.18)),url('https://images.unsplash.com/photo-1599351431202-1e0f0e4e3b6d?auto=format&fit=crop&w=1800&q=90') center/cover; filter:contrast(1.08) saturate(.82) brightness(.88); }
-        .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.18; background:linear-gradient(115deg,transparent 0 47%,rgba(191,196,202,.75) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(191,196,202,.62) 76.1% 76.2%,transparent 76.3%); }
+        .hero::before { content:''; position:absolute; z-index:1; inset:0; opacity:.24; background:linear-gradient(115deg,transparent 0 47%,rgba(191,196,202,.75) 47.1% 47.25%,transparent 47.35% 100%),linear-gradient(90deg,transparent 0 76%,rgba(191,196,202,.62) 76.1% 76.2%,transparent 76.3%),url('La_bandera.jpg') center/cover; }
         .hero .wrap { position:relative; z-index:1; min-height:760px; display:flex; align-items:flex-end; padding-bottom:82px; }
         .hero-copy { position:relative; z-index:1; max-width:760px; animation:rise-in .8s ease-out both; }
         h1 { margin:24px 0 25px; font:800 clamp(58px,10vw,144px)/.86 var(--display); letter-spacing:-.07em; text-transform:uppercase; }
@@ -137,6 +137,8 @@
             .experience-social { display:block; margin-top:10px; line-height:1.6; } .experience-social-links { flex-wrap:wrap; gap:16px; margin-top:12px; }
             form { grid-template-columns:1fr; } .full { grid-column:auto; } #form-status { grid-column:auto; } input, select, textarea { font-size:16px; } form .button { width:100%; justify-content:center; min-height:48px; } .details { grid-template-columns:1fr; gap:22px; }
             .footer-main { align-items:flex-start; gap:18px; flex-direction:column; }
+            .hero-note, .intro-copy, .services-head p, .service-detail, .social-head p, .booking-intro p, .detail p { font-size:16px; }
+            .eyebrow, .heritage-tag, .button, .nav-links, .book-link, .experience-tag, .experience-social, .footer-note, .footer-bottom, label, .detail h3, .contact-label { font-size:11px; }
         }
     </style>
 </head>
